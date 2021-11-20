@@ -1,0 +1,34 @@
+@import '../../var';
+
+.input {
+ min-width: 350px;
+ border-radius: 0.2em;
+ margin: 1rem 0;
+ background-color: $selector;
+ font-size: 1.5rem;
+ width: 70%;
+ border: 0;
+ padding: 0 0 4px 0.5em;
+}
+
+.input:focus {
+ outline: none;
+}
+
+.btn {
+ max-height: 40px;
+ font-size: 1.5rem;
+ background-color: $color_yellow;
+ box-shadow: 0 5px ($color_yellowShadow);
+ border-radius: 0.2em;
+ outline: 0;
+ border: 0;
+ padding: 0 0.5em;
+ cursor: pointer;
+}
+
+.btn:hover {
+ background-color: $color_brown;
+ box-shadow: 0 5px ($rosewood);
+ color: whitesmoke;
+}
