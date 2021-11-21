@@ -1,8 +1,11 @@
 @import '../var';
 body{
 background-color: $bg_color1;
+  font-family: "Barlow",
+  sans-serif;
 }
 .app {
   text-align: center;
   font-size: 16px;
+  line-height: 1.5rem;
 }

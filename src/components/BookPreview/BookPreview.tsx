@@ -27,7 +27,7 @@ const BookPreview: React.FC<IBookPreview> = (props) => {
         <div className={classes.cardFront}>
         <div className={classes.frontLeft}>
           <img
-            src={getImage(imageLinks)}
+            src={getImage(imageLinks, true)}
             alt={title}
           />
         </div>

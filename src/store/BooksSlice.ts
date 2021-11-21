@@ -1,18 +1,11 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import key, { api } from "../_const";
 import axios from "axios";
-import IBookPreview from "../types/bookPreview";
-import IFetchParams from "../types/fetchParams";
 
-interface IBookState {
-  name: string;
-  field: string;
-  priority: string;
-  total: number;
-  loading: boolean;
-  books: IBookPreview[] | [];
-  errorMsg: string | null;
-}
+import IFetchParams from "../types/fetchParams";
+import IBookState from "../types/booksState";
+
+
 
 const initState: IBookState = {
   name: "",
@@ -29,10 +22,9 @@ export const fetchBooks = createAsyncThunk(
   async function (params: IFetchParams, { rejectWithValue}) {
     const { title, field, priority } = params;
     try {
-      const response = await axios.get(
+      const res = await axios.get(
         `${api}/volumes?q=${title}&maxResults=30&orderBy=${priority}&subject=${field}:${key}`
       );
-      const res = await response
 
       return {
         books: res.data.items,
@@ -70,7 +62,7 @@ export const fetchMoreBooks = createAsyncThunk(
   }
 );
 
-const bookSlice = createSlice({
+const BookSlice = createSlice({
   name: "bookSlice",
   initialState: initState,
   reducers: {},
@@ -116,4 +108,4 @@ const bookSlice = createSlice({
   },
 });
 
-export default bookSlice.reducer;
+export default BookSlice.reducer;

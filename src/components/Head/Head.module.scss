@@ -1,3 +1,4 @@
+@import './../var';
 .head{
  background-image: url(../../imgs/book.jpg);
  width: 100%;
@@ -10,4 +11,10 @@
    justify-content: center;
    flex-wrap: wrap;
  }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .head {
+    font-size: 20px;
+  }
 }

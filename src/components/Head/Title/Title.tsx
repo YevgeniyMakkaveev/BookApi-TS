@@ -11,7 +11,7 @@ const Title: React.FC = () => (
       made by Yevgeny Makkaveev
     </a>
     <div className={classes.headTitle}>
-      <h1> BOOK-API 2.0</h1>
+      <h1> BOOK-API 3</h1>
     </div>
   </>
 );

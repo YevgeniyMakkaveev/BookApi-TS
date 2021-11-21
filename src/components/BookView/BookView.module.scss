@@ -1,0 +1,76 @@
+@import '../var';
+
+.card {
+ margin: 0 auto;
+ padding: 2rem;
+
+ .category {
+  padding: 1rem 0;
+  color: $color_gray;
+  font-weight: 600;
+ }
+
+ .mainInfo {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  img {
+   display: block;
+   align-self: center;
+   min-width: 200px;
+   max-width: 300px;
+  }
+
+  .infoList {
+   text-align: left;
+
+   .title {
+    font-size: 2rem;
+    font-size: 700;
+   }
+
+   .list {
+    list-style: none;
+    text-align: left;
+   }
+  }
+
+  .descriptionWrap {
+   margin-top: 2rem;
+   grid-column-start: 1;
+   grid-column-end: 3;
+   align-items: center;
+   padding: 0 auto;
+   border: double $color_brown;
+
+   .description {
+    margin: 2rem 0;
+   }
+  }
+ }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+ .card {
+  font-size: 20px;
+
+  .mainInfo {
+   img {
+    min-width: 300px;
+    max-width: 400px;
+   }
+
+   .infoList {
+    .title {
+     font-size: 2.3rem;
+     font-size: 700;
+    }
+    .list{
+     li{
+      margin: 0.5rem 0;
+     }
+    }
+   }
+  }
+ }
+}

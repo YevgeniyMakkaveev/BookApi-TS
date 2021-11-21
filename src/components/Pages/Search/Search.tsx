@@ -1,14 +1,27 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 
 import BookPreview from "../../BookPreview/BookPreview";
-import classes from './Search.module.scss'
-import IBookPreview from '../../../types/bookPreview';
-const SearchResult:React.FC=()=>{
-  const data:IBookPreview[] = useSelector((state:any) => state.books.books);
+import classes from "./Search.module.scss";
+import IBookPreview from "../../../types/bookPreview";
+import IReducerState from "../../../types/globalState";
+import { fetchMoreBooks } from "../../../store/BooksSlice";
 
-return (<div className={classes.cardNest}>
-{data.map(el=><BookPreview key={el.volumeInfo.title+`${Math.random()}`} {...el} />)}
-</div>)
-}
-export default SearchResult
+const SearchResult: React.FC = () => {
+  const data: IBookPreview[] = useSelector((state: IReducerState) => state.books.books);
+  const error: string|null = useSelector((state: IReducerState) => state.books.errorMsg);
+  const dispatch=useDispatch();
+
+  return (
+    <div className={classes.singleBook}>
+    <div className={classes.cardNest}>
+      {error&&<div>{error}</div>}
+      {!error&&data[0]&&data.map((el) => (
+        <BookPreview key={el.volumeInfo.title + `${Math.random()}`} {...el} />
+      ))}
+    </div>
+   {data[0]&& <button className={classes.btn} onClick={()=>dispatch(fetchMoreBooks())}> Load More</button>}
+    </div>
+  );
+};
+export default SearchResult;

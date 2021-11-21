@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchBooks } from "../../store/BookSlicer";
+import { useNavigate } from "react-router";
+
+import { fetchBooks } from "../../store/BooksSlice";
 import { fieldParam, searchParams } from "./fields";
 import Selector from "./Selector";
 import SearchBar from "./SearchBar";
@@ -13,6 +15,7 @@ const Head: React.FC = () => {
   const [priority, setPriority] = useState("relevance");
 
   const dispatch = useDispatch();
+   const navigate = useNavigate(); 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (text.length <= 0) return;
@@ -23,6 +26,7 @@ const Head: React.FC = () => {
         priority: priority,
       })
     );
+    navigate('/')
     setText("");
     setField("all");
     setPriority("relevance");

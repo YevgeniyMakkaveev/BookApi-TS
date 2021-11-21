@@ -60,10 +60,11 @@
    }
 
    .cardBack {
+      padding-top: 1em;
       background-color: $card_info;
       transform: rotateY(180deg);
       padding: 0 1em;
-      text-overflow: clip;
+      
 
    }
 }

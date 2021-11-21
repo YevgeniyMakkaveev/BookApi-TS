@@ -17,3 +17,9 @@ text-shadow: 0.022em 0.022em 0.022em rgb(255, 252, 252);
  width: 100%;
  text-align: left;
 }
+
+@media screen and (min-width: $breakpoint-tablet){
+  .headTitle{
+    font-size: 1.8rem;
+  }
+}

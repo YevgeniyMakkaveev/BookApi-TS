@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import BookSlicer from "./BookSlicer";
+import BookSlice from "./BooksSlice";
+import SingleBookSlice from "./SingleBookSlicer"; 
 
 export default configureStore({
-  reducer: { books: BookSlicer},
+   reducer: { books: BookSlice, singleBook: SingleBookSlice },
 });
