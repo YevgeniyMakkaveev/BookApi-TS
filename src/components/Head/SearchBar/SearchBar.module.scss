@@ -32,8 +32,11 @@
  box-shadow: 0 5px ($rosewood);
  color: whitesmoke;
 }
-@media screen and (min-width: $breakpoint-tablet){
- .input,.btn{
+
+@media screen and (min-width: $breakpoint-tablet) {
+
+ .input,
+ .btn {
   font-size: 1.8rem;
  }
 }

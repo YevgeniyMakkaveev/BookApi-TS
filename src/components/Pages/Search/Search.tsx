@@ -6,6 +6,7 @@ import classes from "./Search.module.scss";
 import IBookPreview from "../../../types/bookPreview";
 import IReducerState from "../../../types/globalState";
 import { fetchMoreBooks } from "../../../store/BooksSlice";
+import Error from "../../Error";
 
 const SearchResult: React.FC = () => {
   const data: IBookPreview[] = useSelector((state: IReducerState) => state.books.books);
@@ -15,7 +16,7 @@ const SearchResult: React.FC = () => {
   return (
     <div className={classes.singleBook}>
     <div className={classes.cardNest}>
-      {error&&<div>{error}</div>}
+      {error&&<Error error={error} />}
       {!error&&data[0]&&data.map((el) => (
         <BookPreview key={el.volumeInfo.title + `${Math.random()}`} {...el} />
       ))}

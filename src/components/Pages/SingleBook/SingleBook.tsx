@@ -1,7 +1,9 @@
 import React,{useEffect} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import { fetchSingleBook } from "../../../store/SingleBookSlicer";
+import Error from "../../Error";
 import BookView from "../../BookView";
 import IReducerState from "../../../types/globalState";
 import classes from './SingleBook.module.scss'
@@ -21,7 +23,7 @@ const SingleBook:React.FC=()=>{
 
 
  return <div className={classes.singleBook}> <button className={classes.btn} onClick={()=>navigate('/')}> ←Back</button> 
- {error&&<div>{error}</div>}
+ {error&& <Error error={error} />}
  {data&& <BookView key={data.title} {...data} />} </div>
 
  

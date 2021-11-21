@@ -1,6 +1,7 @@
 @import '../var';
 
 .card {
+   font-size: 0.8rem;
    width: 400px;
    min-height: 300px;
    margin: 1em;
@@ -64,7 +65,7 @@
       background-color: $card_info;
       transform: rotateY(180deg);
       padding: 0 1em;
-      
+
 
    }
 }
@@ -73,6 +74,7 @@
 
 @media screen and (min-width: $breakpoint-tablet) {
    .card {
+      font-size: 1rem;
       height: 400px;
    }
 }
