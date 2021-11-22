@@ -1,6 +1,5 @@
 interface IBookPreview {
   volumeInfo: IVolumeInfo;
-  selfLink: string;
   id: string;
 }
 

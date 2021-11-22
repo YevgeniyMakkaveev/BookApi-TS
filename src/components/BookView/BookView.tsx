@@ -26,7 +26,6 @@ const BookView: React.FC<IBookView> = (props) => {
   return (
     <div className={classes.card}>
       <div className={classes.category}>
-        {" "}
         {categories ? categories.join() : "No categories"}
       </div>
 
@@ -36,8 +35,8 @@ const BookView: React.FC<IBookView> = (props) => {
           <h2 className={classes.title}> {title}</h2>
           <ul className={classes.list}>
             <li>
-              <strong>Authors: </strong>{" "}
-              {authors ? authors.join() : "No authors"}{" "}
+              <strong>Authors: </strong>
+              {authors ? authors.join(" ") : "No authors"}
             </li>
             <li>
               <strong>Publisher:</strong>
@@ -47,7 +46,7 @@ const BookView: React.FC<IBookView> = (props) => {
               <strong>Published date:</strong> {publishedDate}
             </li>
             <li>
-              <strong>Pages:</strong> {pageCount}{" "}
+              <strong>Pages:</strong> {pageCount}
             </li>
             <li>
               <strong>ID:</strong>{" "}

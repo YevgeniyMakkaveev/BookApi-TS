@@ -2,9 +2,11 @@
 
 .selectorGroup {
  margin: 1rem 2rem;
+  padding: 0.2em 1rem;
  background: rgba(0, 0, 0, 0.6);
 
  select {
+  font-size: 16px;
   background-color: $selector;
   border-radius: 0.2em;
   text-align: center;

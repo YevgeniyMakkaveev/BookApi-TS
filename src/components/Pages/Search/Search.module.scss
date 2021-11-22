@@ -1,21 +1,34 @@
 @import '../../var';
 
-.cardNest{
+.cardNest {
      display: flex;
-     margin: 2rem 4rem;
+     margin: 2rem 0;
      flex-wrap: wrap;
 }
-.btn{
-   background-color: $color_yellow;
-   box-shadow: 0 5px ($color_yellowShadow);
-   border-radius: 0.3em;
-   border: 0;
-   font-size: 2rem;
-   padding: 0 5rem;
-   cursor: pointer;
+
+.label{
+     margin: 0.5rem;
+     font-size: 1.5rem;
 }
-  .btn:hover {
-       background-color: $color_brown;
-       box-shadow: 0 5px ($rosewood);
-       color: white;
-  }
+
+.btn {
+     background-color: $color_yellow;
+     box-shadow: 0 5px ($color_yellowShadow);
+     border-radius: 0.3em;
+     border: 0;
+     font-size: 2rem;
+     padding: 0 5rem;
+     cursor: pointer;
+}
+
+.btn:hover {
+     background-color: $color_brown;
+     box-shadow: 0 5px ($rosewood);
+     color: white;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+     .cardNest {
+          margin: 2rem 4rem;
+     }
+}

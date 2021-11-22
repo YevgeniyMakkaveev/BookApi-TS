@@ -2,9 +2,9 @@
 
 .card {
    font-size: 0.8rem;
+   margin: 1em 0;
    width: 400px;
-   min-height: 300px;
-   margin: 1em;
+   min-height: 350px;
    perspective: 1000px;
    cursor: pointer;
    border-radius: 0.3em;
@@ -70,10 +70,9 @@
    }
 }
 
-
-
 @media screen and (min-width: $breakpoint-tablet) {
    .card {
+      margin: 1em;
       font-size: 1rem;
       height: 400px;
    }

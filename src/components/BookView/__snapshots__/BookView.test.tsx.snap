@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should be used to test snapshots should mach the snapshot 1`] = `
+<BookView
+  authors={
+    Array [
+      "Jon",
+      "Doe",
+    ]
+  }
+  categories={
+    Array [
+      "Any",
+      "category",
+    ]
+  }
+  description="awersome book"
+  imageLinks={
+    Object {
+      "smallThumbnail": "No",
+      "thumbnail": "image",
+    }
+  }
+  industryIdentifiers={
+    Array [
+      Object {
+        "identifier": "No",
+        "type": "id",
+      },
+    ]
+  }
+  pageCount={300}
+  publishedDate="1984"
+  publisher="Me"
+  title="Book"
+/>
+`;

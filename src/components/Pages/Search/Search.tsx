@@ -10,11 +10,14 @@ import Error from "../../Error";
 
 const SearchResult: React.FC = () => {
   const data: IBookPreview[] = useSelector((state: IReducerState) => state.books.books);
+  const total: number = useSelector((state: IReducerState) => state.books.total);
   const error: string|null = useSelector((state: IReducerState) => state.books.errorMsg);
   const dispatch=useDispatch();
+  
 
   return (
-    <div className={classes.singleBook}>
+    <div>
+      {data[0]&&<div className={classes.label}>Found {total} books</div>}
     <div className={classes.cardNest}>
       {error&&<Error error={error} />}
       {!error&&data[0]&&data.map((el) => (
