@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import SearchResult from "../Pages/Search";
 import SingleBook from "../Pages/SingleBook";
+import NotFound from "../Pages/404/NotFound";
 import Head from "../Head";
 import Loader from "../Loader";
 import IReducerState from "../../types/globalState";
@@ -25,6 +26,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<SearchResult />} />
           <Route path="/book/:id" element={<SingleBook />} />
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
       </div>
     </ErrorBoundry>
